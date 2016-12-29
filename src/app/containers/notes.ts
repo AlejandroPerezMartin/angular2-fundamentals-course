@@ -37,7 +37,7 @@ export class Notes implements OnDestroy {
 
     constructor(private noteService: NoteService) {
         this.noteService.getNotes()
-        .subscribe(resp => this.notes = resp.data);
+        .subscribe(res => this.notes = res.data);
     }
 
     onCreateNote(note) {
@@ -47,10 +47,10 @@ export class Notes implements OnDestroy {
 
     onNoteChecked(note) {
         this.noteService.completeNote(note)
-            .subscribe(note => {
-                const i = this.notes.findIndex(localNote => localNote.id === note.id);
-                this.notes.splice(i, 1);
-            });
+        .subscribe(note => {
+            const i = this.notes.findIndex(localNote => localNote.id === note.id);
+            this.notes.splice(i, 1);
+        });
     }
 
     ngOnDestroy() {

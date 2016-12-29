@@ -14,9 +14,7 @@ export class ApiService {
 
     api_url: string = 'http://localhost:3500'
 
-    constructor(private http: Http) {
-
-    }
+    constructor(private http: Http) {}
 
     private getJson(response: Response) {
         return response.json();
@@ -26,7 +24,7 @@ export class ApiService {
         if (response.status >= 200 && response.status < 300) {
             return response;
         }
-        const error = new Error(response.statusText);
+        var error = new Error(response.statusText);
         error['response'] = response;
         console.log(error);
         throw error;
