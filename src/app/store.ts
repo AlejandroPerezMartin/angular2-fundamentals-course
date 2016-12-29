@@ -12,19 +12,25 @@ export interface Note {
     userId?: string
 }
 
-export interface State {
-    notes: Note[]
+export interface User {
+    id?: string
 }
 
-const defaultState: State = {
-    notes: []
+export interface State {
+    notes: Note[]
+    user: User
+}
+
+const defaultState = {
+    notes: [],
+    user: {}
 }
 
 const _store = new BehaviorSubject<State>(defaultState);
 
 @Injectable()
 export class Store {
-    
+
     private store = _store;
     changes = this.store.asObservable().distinctUntilChanged()
 
