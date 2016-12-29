@@ -9,18 +9,19 @@ import {
     AppBar,
     NoteCard,
     NoteCreator,
-    ColorPicker } from './app/ui'
+    ColorPicker
+} from './app/ui'
 
 @NgModule({
   declarations: [
       App,
       Main,
-      About,
       AppBar,
       Notes,
       NoteCard,
       NoteCreator,
-      ColorPicker
+      ColorPicker,
+      About
   ],
   providers,
   imports: [

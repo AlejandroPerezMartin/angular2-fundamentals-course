@@ -1,4 +1,4 @@
-import { BehaviourSubject } from 'rxjs/BehaviourSubject'
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Injectable } from '@angular/core'
 import 'rxjs/Rx'
 
@@ -20,7 +20,7 @@ const defaultState: State = {
     notes: []
 }
 
-const _store = new BehaviourSubject<State>(defaultState);
+const _store = new BehaviorSubject<State>(defaultState);
 
 @Injectable()
 export class Store {
