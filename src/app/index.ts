@@ -7,6 +7,6 @@ export { routes } from './routes';
 const mapValuesToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
 export const providers = [
-    Store,
-    ...mapValuesToArray(services)
-]
+  Store,
+  ...mapValuesToArray(services)
+];

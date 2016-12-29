@@ -38,8 +38,7 @@ export class ApiService {
     }
 
     post(path, body): Observable<any> {
-        return this.http.post(
-            `${this.api_url}${path}`,
+        return this.http.post(`${this.api_url}${path}`,
             JSON.stringify(body),
             {headers: this.headers}
         )

@@ -1,7 +1,7 @@
+import { AuthService } from './services';
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { Main, Notes, About, Auth } from './containers';
-import { AuthService } from './services';
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
     {
@@ -9,22 +9,10 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         component: Main,
         canActivate: [AuthService],
         children: [
-            {
-                path: '',
-                component: Notes
-            },
-            {
-                path: 'about',
-                component: About
-            }
+            {path: '', component: Notes},
+            {path: 'about', component: About}
         ]
     },
-    {
-        path: 'auth',
-        component: Auth,
-    },
-    {
-        path: '**',
-        redirectTo: ''
-    }
+    {path: 'auth', component: Auth},
+    {path: '**', redirectTo: ''}
 ])
